@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About me
+subtitle: Why my reverse shell doesn't connect
 ---
 
 My name is Omar. I love indomie
