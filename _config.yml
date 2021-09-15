@@ -39,30 +39,12 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  email: "omakmoh@gmail.com"
   facebook: omakmoh2
   github: omakmoh
   twitter: omakmoh
-# patreon: DeanAttali
-# youtube: c/daattali
-#  medium: yourname
-#  reddit: yourname
-   linkedin: omakmoh
-#  xing: yourname
-#  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-#  spotify: yourname
-#  telephone: +14159998888
-#  steam: deanat78
-#  twitch: yourname
-#  yelp: yourname
-   telegram: omakmoh
-#  calendly: yourname
-#  mastodon: instance.url/@username
-#  ORCID: your ORCID ID
-#  google-scholar: your google scholar
-
+  telegram: omakmoh
+  linkedin: omakmoh
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
 rss-description: This website is a virtual proof that I'm awesome
