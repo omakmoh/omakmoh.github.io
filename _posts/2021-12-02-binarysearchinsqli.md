@@ -8,4 +8,7 @@ published: true
 Let us assume that we need to search value 91 using binary search.
 ![BinarySearch1](/assets/img/Binaryserach1.png){: .mx-auto.d-block :}
 First, we should select the half of the array by using this way
-~~~middle = low + (high - low) / 2~~~{: .mx-auto.d-block :}
+
+~~~
+middle = low + (high - low) / 2
+~~~
