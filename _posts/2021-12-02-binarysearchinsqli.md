@@ -12,3 +12,7 @@ First, we should select the half of the array by using this way
 ~~~
 middle = low + (high - low) / 2
 ~~~
+
+13 + (146 - 13) / 2 = 79 (integer of 79.5). So, 79 is the middle.
+The Red square is the middle.
+![BinarySearchmiddle](/assets/img/BinarysearchMiddle.png)
