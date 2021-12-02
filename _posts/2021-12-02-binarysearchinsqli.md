@@ -39,3 +39,19 @@ low = 80 + 1
 middle = low + ( 146 - low ) / 2 = 113
 
 Our new middle is 113, We now comparing the new middle(113) with our target(91)
+
+![BinarySearch4](/assets/img/BinarySearch4.png){: .mx-auto.d-block :}
+
+The middle(113) is greater than target(91), So we will take first half
+
+![BinarySearch5](/assets/img/BinarySearch5.png){: .mx-auto.d-block :}
+
+We calculate the middle again
+high = 91 - 1
+middle = 84 + ( 90 - 84 ) / 2 = 87
+Compare the target(91) again with middle(87)
+Now the middle(87) less than the target we will take the second half
+
+![BinarySearch6](/assets/img/BinarySearch6.png){: .mx-auto.d-block :}
+
+This how binary search algorthim works and found the target value.
