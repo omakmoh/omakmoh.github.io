@@ -1,59 +1,79 @@
 ---
-title: Malware Reverse Engineering - CyberTalents Quals 2020
-published: true
+layout: post
+title: Sample blog post
+subtitle: Each post also has a subtitle
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: true
+published: false
 ---
 
-Hello Hackers.
-This is my writeup for Cybertalents Qualifications. <br>
-I'll continue the writeup for CyberTalents Quals Next Category is Reverse Engineering <br>
+This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
 
-> Challange Name: isolation <br>
-> Category: Malware Reverse Engineering <br>
-> Points: 100  <br>
-> Difficulty: Medium <br>
-> Description: Devoloper think that the real hacker does not need any buttons to get the flag.
+**Here is some bold text**
 
-It is an .apk file .. you can download the apk from [here](https://hubchallenges.s3-eu-west-1.amazonaws.com/Reverse/isolation.apk) <br>
+## Here is a secondary heading
 
+Here's a useless table:
 
-First of all i install the apk file on genymotion emulator and run it <br>
-
-
-![](/../../assets/img/1.PNG)<br>
+| Number | Next number | Previous number |
+| :------ |:--- | :--- |
+| Five | Six | Four |
+| Ten | Eleven | Nine |
+| Seven | Eight | Six |
+| Two | Three | One |
 
 
-When i open the application i see login page but without login button
+How about a yummy crepe?
 
-![](/../../assets/img/blahdf.PNG)<br>
+![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
 
-this is the thing which mentioned in the description 
+It can also be centered!
 
-Then I realized that there is another page i will access it from outside the application and this issue called access control issue 
+![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
 
-![](/../../assets/img/hackerman.jpg)<br>
+Here's a code chunk:
 
-first thing came in my mind it's decode the apk file
+~~~
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+~~~
 
-![](/../../assets/img/apk.PNG)<br>
+And here is the same code with syntax highlighting:
 
-I decode the app using apktool `apktool d isolate.apk`
+```javascript
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+```
 
-![](/../../assets/img/2.PNG)<br>
+And here is the same code yet again but with line numbers:
 
-Then i inspect AndroidManiFest.XML looking for any activities
+{% highlight javascript linenos %}
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+{% endhighlight %}
 
-![](/../../assets/img/3.PNG)<br>
+## Boxes
+You can add notification, warning and error boxes like this:
 
-As we see there is an Activity called `SECRETBOX` and it is protected with an intent filter 
-and the intent filter should not use it as a protection mechanism because when using the intent filter whe an app component like activity the component is publicly exported , so the activity is vulenrable and it can be invoke from any outside application
+### Notification
 
-So let's make some fun 
+{: .box-note}
+**Note:** This is a notification box.
 
-via adb shell i use this command `am start -W com.cybertalents.otherside/.SecretBox`
+### Warning
 
-and finally we made it.. 
+{: .box-warning}
+**Warning:** This is a warning box.
 
-![](/../../assets/img/4.PNG)<br>
+### Error
 
-D1FCF5F5F6B9FFEBF6F4B9DAB2B2
-
+{: .box-error}
+**Error:** This is an error box.
