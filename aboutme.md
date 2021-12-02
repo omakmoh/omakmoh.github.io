@@ -1,10 +1,6 @@
 ---
 layout: page
-title: About me
-subtitle: Why my reverse shell doesn't connect
+title: whoami
 ---
 
-My name is Omar. I love indomie
-### My story
-
-I Woke up and Found myself a Hacker 
+Hi, I'm Omar 'omakmoh' Karam 17-year-old man with high guessing skills with some Web/Network penetration testing Also I'm bruteforcing the challenge I'm stuck in.
