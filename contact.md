@@ -1,6 +1,6 @@
 ---
 layout: page
-title: contact
+title: Contact
 ---
 
-Feel free to contact me via Twitter[https://www.twitter.com/omakmoh] or Linkedin[https://www.linkedin.com/in/omakmoh]
+Feel free to contact me via [Twitter](https://www.twitter.com/omakmoh) or [Linkedin](https://www.linkedin.com/in/omakmoh)
