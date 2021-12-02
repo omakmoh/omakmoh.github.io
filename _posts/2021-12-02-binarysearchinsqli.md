@@ -16,3 +16,8 @@ middle = low + (high - low) / 2
 13 + (146 - 13) / 2 = 79 (integer of 79.5). So, 79 is the middle.
 The Red square is the middle.
 ![BinarySearchmiddle](/assets/img/BinarysearchMiddle.png)
+
+Now we should compare the middle(79) with the target value(91)
+The target value is greater than 79.
+So our target value in the second half of the array We will ignore the first half
+![BinarySearch3](/assets/img/BinarySearch3.png)
