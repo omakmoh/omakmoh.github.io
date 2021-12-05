@@ -28,7 +28,7 @@ CONS
 ## How is the binary search algorithm works?
 Let us assume that we need to search value 91 using binary search.
 
-![BinarySearch1](/assets/img/Binaryserach1.png){: .mx-auto.d-block :}
+![BinarySearch1](/assets/img/Binaryserach1.png){ width=50% }
 
 First, we should select the half of the array by using this way
 
