@@ -9,11 +9,8 @@ published: true
 
 # Blind Sql injection (T)heoretical 
 To exfiltrate data from database using blind SQL injection we need to bruteforce character by character
-
 That's requires alot of bruteforce you'll bruteforce {a-z|A-Z|0-9} to exfiltrate one character
-
 Now We reduced the requests to 4~7 request per character 
-
 We'll insert the alphabet in array as ASCII numbers then Divide by 2 until you get the correct character
 
 ## How is the binary search algorithm works?
