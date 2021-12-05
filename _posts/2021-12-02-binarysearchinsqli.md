@@ -17,7 +17,7 @@ PROS
 2. N/A
 3. N/A
 
-![meme1](/assets/img/meme1.png){ width: 50px;}
+![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}
 
 CONS
 
@@ -28,7 +28,7 @@ CONS
 ## How is the binary search algorithm works?
 Let us assume that we need to search value 91 using binary search.
 
-![BinarySearch1](/assets/img/Binaryserach1.png){ width=50% }
+![BinarySearch1](/assets/img/Binaryserach1.png){: .mx-auto.d-block :}
 
 First, we should select the half of the array by using this way
 
