@@ -7,7 +7,7 @@ published: true
 ## Summury
 
 
-# Blind Sql injection theoretical 
+# Blind Sql injection (T)heoretical 
 To exfiltrate data from database using blind SQL injection we need to bruteforce character by character
 That's requires alot of bruteforce you'll bruteforce {a-z|A-Z|0-9} to exfiltrate one character
 Now We reduced the requests to 4~7 request per character 
