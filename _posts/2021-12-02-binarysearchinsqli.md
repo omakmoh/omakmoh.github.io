@@ -17,7 +17,7 @@ PROS
 2. N/A
 3. N/A
 
-![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}{ width: 100px; }
+![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}{ width: 50px; }
 
 CONS
 
