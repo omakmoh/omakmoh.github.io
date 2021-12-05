@@ -8,10 +8,22 @@ published: true
 
 
 # Blind Sql injection (T)heoretical 
-To exfiltrate data from database using blind SQL injection we need to bruteforce character by character
-That's requires alot of bruteforce you'll bruteforce {a-z|A-Z|0-9} to exfiltrate one character
-Now We reduced the requests to 4~7 request per character 
-We'll insert the alphabet in array as ASCII numbers then Divide by 2 until you get the correct character
+In this section I will try to deliver the basic idea of blind Sql Injection.
+Let's assume we have a vulnerable parameter and we need to dump the database, so to compliete this mission we will need to many tries (bruteforce) to get character by character and as we know every single thing has pros and cons.
+
+PROS
+
+1. N/A
+2. N/A
+3. N/A
+
+![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}
+
+CONS
+
+1. Takes much time.
+2. Firewall block.
+
 
 ## How is the binary search algorithm works?
 Let us assume that we need to search value 91 using binary search.
