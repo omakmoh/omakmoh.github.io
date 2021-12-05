@@ -79,7 +79,7 @@ I'm facing the same login panel but this time they patched the SQL injection.
 So I should dump the password from the previous login panel.
 Let's back to the previous login panel and script the process.
 
-##### What I will do?
+#### What I will do?
 
 Basically I'll use [ASCII](https://www.w3schools.com/sql/func_sqlserver_ascii.asp) function in SQL && The ASCII Values for the printables characters which is from 32 to 128
 
