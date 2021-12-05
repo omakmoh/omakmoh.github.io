@@ -55,3 +55,31 @@ Now the middle(87) less than the target we will take the second half
 ![BinarySearch6](/assets/img/BinarySearch6.png){: .mx-auto.d-block :}
 
 This how binary search algorthim works and found the target value.
+
+## How we can use Bianry Search in Blind SQL Injection?
+
+I'll use [bouncy-box](https://ctftime.org/task/17933) challange from [DamCTF-2021](https://ctftime.org/event/1401).
+
+I'm facing a normal login panel with SQL injection vulnerability in the username field.
+
+![Chall1](/assets/img/Chall1.png){: .mx-auto.d-block :}
+
+Bypass the login panel with the common true condition `' and 1=1;`
+
+![Chall2](/assets/img/Chall2.png){: .mx-auto.d-block :}
+
+So we now bypassed the login but when I'm request the free flag
+
+![Chall3](/assets/img/Chall3.png){: .mx-auto.d-block :}
+
+I'm facing the same login panel but this time they patched the SQL injection.
+
+![Chall4](/assets/img/Chall4.png){: .mx-auto.d-block :}
+
+So I should dump the password from the previous login panel.
+Let's back to the previous login panel and script the process.
+
+##### What I will do?
+
+Basically I'll use [ASCII](https://www.w3schools.com/sql/func_sqlserver_ascii.asp) function in SQL && The ASCII Values for the printables characters which is from 32 to 128
+
