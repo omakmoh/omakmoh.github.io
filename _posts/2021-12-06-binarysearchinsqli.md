@@ -25,6 +25,7 @@ Let's assume we have a vulnerable parameter and we need to dump the database, so
 ## How is the binary search algorithm works?
 Let us assume that we have array of numbers and we want to extract a certain value from them
 So we need to search value 91 in the array.
+`NOTE: The array must be sorted`
 
 ![BinarySearch1](/assets/img/Binaryserach1.png){: .mx-auto.d-block :}
 
