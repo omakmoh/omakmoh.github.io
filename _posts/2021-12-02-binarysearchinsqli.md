@@ -4,14 +4,11 @@ title: Implementing Binary Search Algorithm in Blind SQL Injection
 tags: [sqli]
 published: true
 ---
-## Summury
-
-
 # (T)heoretical Blind Sql injection 
 In this section I will try to deliver the basic idea of blind Sql Injection.
 Let's assume we have a vulnerable parameter and we need to dump the database, so to compliete this mission we will need to many tries (bruteforce) to get character by character and as we know every single thing has pros and cons.
 
-####PROS
+#### PROS
 
 1. N/A
 2. N/A
@@ -19,14 +16,15 @@ Let's assume we have a vulnerable parameter and we need to dump the database, so
 
 ![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}
 
-####CONS
+#### CONS
 
 1. Takes much time.
 2. Firewall block.
 
 
 ## How is the binary search algorithm works?
-Let us assume that we need to search value 91 using binary search.
+Let us assume that we have array of numbers and we want to extract a certain value from them
+So we need to search value 91 in the array.
 
 ![BinarySearch1](/assets/img/Binaryserach1.png){: .mx-auto.d-block :}
 
