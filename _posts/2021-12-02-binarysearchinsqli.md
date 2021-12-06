@@ -7,11 +7,11 @@ published: true
 ## Summury
 
 
-# Blind Sql injection (T)heoretical 
+# (T)heoretical Blind Sql injection 
 In this section I will try to deliver the basic idea of blind Sql Injection.
 Let's assume we have a vulnerable parameter and we need to dump the database, so to compliete this mission we will need to many tries (bruteforce) to get character by character and as we know every single thing has pros and cons.
 
-PROS
+####PROS
 
 1. N/A
 2. N/A
@@ -19,7 +19,7 @@ PROS
 
 ![meme1](/assets/img/meme1.png){: .mx-auto.d-block :}
 
-CONS
+####CONS
 
 1. Takes much time.
 2. Firewall block.
