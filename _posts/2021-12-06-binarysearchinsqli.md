@@ -93,7 +93,7 @@ So we now bypassed the login but when I'm request the free flag
 
 ![Chall3](/assets/img/Chall3.png){: .mx-auto.d-block :}
 
-I'm facing the same login panel but this time they patched the SQL injection.
+I'm facing another login panel but this time they patched the SQL injection.
 
 ![Chall4](/assets/img/Chall4.png){: .mx-auto.d-block :}
 
