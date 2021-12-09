@@ -6,7 +6,7 @@ published: true
 ---
 # (T)heoretical Blind Sql injection 
 In this section I will try to deliver the basic idea of blind Sql Injection.
-Let's assume we have a vulnerable parameter and we need to dump the database, so to compliete this mission we will need to many tries (bruteforce) to get character by character and as we know every single thing has pros and cons.
+Let's assume we have a vulnerable parameter and we need to dump the database, so to complete this mission we will need to many tries (bruteforce) to get character by character and as we know every single thing has pros and cons.
 
 #### PROS
 
@@ -111,7 +111,7 @@ The first function(sqli) Responsible for communicating with the server to send p
 import requests #importing requests library
 host="https://bouncy-box.chals.damctf.xyz/login" #challange server
 
-def sqli():
+def sqli(pos,mid):
     data = {
         "username":"payload",
         "password":"a",
