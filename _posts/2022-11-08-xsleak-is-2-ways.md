@@ -12,7 +12,7 @@ As a client-side web challenge, Another way is Pwn.
 
 Leaker challenge from [WiCSME CTF 2022](https://cybertalents.com/competitions/women-in-cyber-security-middle-east-wicsme-ctf-2022)
 
-# Intended Solution ( As a web challenge )
+# Intended Solution (As a web challenge)
 Before we dive in, You should know
 ### What is XSleak?
 Cross-site leaks are a class of side-channel vulnerabilities that abuse the features of web browsers that help websites to interact with each other.
@@ -76,7 +76,7 @@ Host the payload on our server, and send it to the admin. The admin visits our s
 You can find my code [here](https://gist.github.com/omakmoh/48ff4d2b4fa33fb99cedf3ca03a36a66)
 
 ---
-# Unintended Solution ( As a pwn challenge )
+# Unintended Solution (As a pwn challenge)
 
 While checking the bot request, I noticed the bot User-Agent is 
 
