@@ -111,5 +111,5 @@ Thanks for reading 😊
 
 # References
 
-1. https://xsleaks.dev
-2. https://securitylab.github.com/research/in_the_wild_chrome_cve_2021_30632/
+1. [https://xsleaks.dev](https://xsleaks.dev)
+3. [https://securitylab.github.com/research/in_the_wild_chrome_cve_2021_30632/](https://securitylab.github.com/research/in_the_wild_chrome_cve_2021_30632/)
