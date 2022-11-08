@@ -23,47 +23,47 @@ Here is The main page
 We Have 3 Functions
 
 1. Login into your existing account
-![](stb-login.png)
+![](/assets/img/leakerwriteup/stb-login.png)
 
 2. Register a New account
-![](stb-register.png)
+![](/assets/img/leakerwriteup/stb-register.png)
 
 3. Report Link to admin
 
-![](stb-report.png)
+![](/assets/img/leakerwriteup/stb-report.png)
 
 We will create normal account. 
 
-![](stb-registering.png)
+![](/assets/img/leakerwriteup/stb-registering.png)
 
 After registering an account, we'll find two functions
 1. Create Paste
 2. Search over our pastes
 
-![](stb-home.png)
+![](/assets/img/leakerwriteup/stb-home.png)
 
 ## Spotting the bug
 I'll create a paste with the fake flag `FLAG{blablabla}`
 
-![](stb-createpaste.png)
+![](/assets/img/leakerwriteup/stb-createpaste.png)
 
 After clicking submit, the application will redirect us to our note.
 
-![](stb-afterredirect.png)
+![](/assets/img/leakerwriteup/stb-afterredirect.png)
 
 As we see, the paste id is too long. We can't brute-force or guess.
 
 When we use the `Search My pastes` Feature with a non-existing word in your pastes
 
-![](stb-notexistingword.png)
+![](/assets/img/leakerwriteup/stb-notexistingword.png)
 
 The application response will be  `Not Found Sorry.`
 
-![](stb-notfoundsorry.png)
+![](/assets/img/leakerwriteup/stb-notfoundsorry.png)
 
 Otherwise, If our query is true ( the word in our pastes ), the application will send us a file `code.res` containing the paste id.
 
-![](stb-downloaded.png)
+![](/assets/img/leakerwriteup/stb-downloaded.png)
 
 We have to get the flag from the admin account. We don't have XSS to steal the admin's cookie.
 
@@ -71,7 +71,7 @@ So our Goal is clear now.
 
 Host the payload on our server, and send it to the admin. The admin visits our site, the script loops over the Charest, and sends search queries on behalf of the admin. When the window closes, the file downloaded equals the character in the paste.
 
-![](final-intended.png)
+![](/assets/img/leakerwriteup/final-intended.png)
 
 You can find my code [here](https://gist.github.com/omakmoh/48ff4d2b4fa33fb99cedf3ca03a36a66)
 
@@ -82,7 +82,7 @@ While checking the bot request, I noticed the bot User-Agent is
 
 `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/93.0.4577.0 Safari/537.36` 
 
-![](unintended-1.png)
+![](/assets/img/leakerwriteup/unintended-1.png)
 
 The bot is using HeadlessChrome version `93.0.4577.0` Which is Vulnerable to `CVE-2021-30632` 
 
@@ -91,21 +91,21 @@ then modified the shellcode part in the exploit script from [Github](https://git
 
 
 
-![](jsshellcode.png)
+![](/assets/img/leakerwriteup/jsshellcode.png)
 
 
 Now we have to set up a listenr for our shell.
 
-![](listen.png)
+![](/assets/img/leakerwriteup/listen.png)
 
 We will now upload the modified script to our server & Use the `Report to Admin` feature to make the bot visit our URL 
 
-![](sendtoadmin.png)
+![](/assets/img/leakerwriteup/sendtoadmin.png)
 
 Finally, Enjoy your ROOT shell
 
-![](rootshell.png)
-![](catflag.png)
+![](/assets/img/leakerwriteup/rootshell.png)
+![](/assets/img/leakerwriteup/catflag.png)
 
 Thanks for reading 😊
 
