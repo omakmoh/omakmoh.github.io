@@ -7,46 +7,46 @@ published: true
 ## Introduction
 I participated in 0xL4ugh CTF 2024 last week with my team [thehackerscrew](https://ctftime.org/team/85618/). <br>
 There is a detailed write-up for Dislaugh Desktop PT challenge, I 🩸 it and another three solves only so far.
-![Chall CTFd](/media/challenge.png)
+![Chall CTFd](/assets/img/dislaugh/challenge.png)
 <br>
 
 ## Exploring the Application
 Visitng the link provided in description we see it's static page for Download DisLaugh Client Application <br>
 
-![Home Page](/media/home-page.png)<br>
+![Home Page](/assets/img/dislaugh/home-page.png)<br>
 We'll download [Windows Client](https://drive.google.com/file/d/1sKXkr0G7PhmJhWQGirRYdMcAUGOjP0QN/view?usp=sharing) then Install it. <br>
 
-![Installing the Application](/media/Installing.png)
+![Installing the Application](/assets/img/dislaugh/Installing.png)
 After the installation it will pop out a discord similar login screen<br>
 
-![Login Screen](/media/login-screen.png)
+![Login Screen](/assets/img/dislaugh/login-screen.png)
 We'll register new account first<br>
 
-![Register Screen](/media/register-screen.png)
+![Register Screen](/assets/img/dislaugh/register-screen.png)
 
 After registration it'll redirect us to Login Screen again.<br>
 After log-in we'll see the Home Screen.
 
-![Home Screen](/media/home-screen.png)
+![Home Screen](/assets/img/dislaugh/home-screen.png)
 
 We have only one option to do, this plus sign is used in discord to create/join server.
 
-![Join/Create Server](/media/create-join-server.png)
+![Join/Create Server](/assets/img/dislaugh/create-join-server.png)
 
 After we creating the server it will be appeard in the left bar, we can click on it to see what's in there
 
-![Server Screen](/media/server-screen.png)
+![Server Screen](/assets/img/dislaugh/server-screen.png)
 
 We can only Send Messages and Copy The Invite code 
 
-![Server Screen](/media/invite-code.png)
+![Server Screen](/assets/img/dislaugh/invite-code.png)
 
 ## Under The Hood
 
 Right Click on the DisLaugh shortcut it will show us the installation location.<br>
 It will be found at `C:\Users\{USERNAME}\AppData\Local\Programs\dislaugh`
 
-![Install Location](/media/install-location.png)
+![Install Location](/assets/img/dislaugh/install-location.png)
 
 We see here it's probably the application written in ElectronJS, so we can get the source code from resources/app.asar <br>
 
@@ -54,7 +54,7 @@ What is app.asar? app.asar is ASAR archive contains the source code for the appl
 
 We'll use [asar](https://github.com/electron/asar) utility to extract the contents of app.asar
 
-![Asar Contents](/media/unpacking_app_asar.png)
+![Asar Contents](/assets/img/dislaugh/unpacking_app_asar.png)
 
 We'll use any online js beautifier to make the js code more comfortable
 
@@ -119,11 +119,11 @@ to check the type of the message<br>
 If the type is text it'll call addMessage with two paramaters otherwise it'll call addLink with five paramaters <br>
 We'll try to send two messages
 
-![Test Messages](/media/test_messages.png)
+![Test Messages](/assets/img/dislaugh/test_messages.png)
 
 Let's take a look from the API directly
 
-![Test Messages but from API](/media/messages-api.png)
+![Test Messages but from API](/assets/img/dislaugh/messages-api.png)
 
 it looks like the backend decide the message is text or link because I can't see anywhere I can't control the type nor anything, so the server fetch the content and decide internally it's text or link.
 <br>
@@ -145,11 +145,11 @@ We'll try a simple function to test the XSS
 ```
 Host the html file and send it in the channel
 
-![Alert Test](/media/alert-test.png)
+![Alert Test](/assets/img/dislaugh/alert-test.png)
 
 BoOoOoM XSS xD 
 
-Back to website, we'll see a tab called help ![Help Page](/media/help-page.png)
+Back to website, we'll see a tab called help ![Help Page](/assets/img/dislaugh/help-page.png)
 
 It looks like we enter the invite code and an administrator visit our server, Maybe the flag in a private server? Let's try to steal the administrator token<br>
 
@@ -182,7 +182,7 @@ both variables is declared in `dashboard.js`
 
 We'll replace `alert(1)` with `sendMessage(activeServer,token)` and send it again in the channel
 
-![sendMessage Function](/media/test-sendmessage.png)
+![sendMessage Function](/assets/img/dislaugh/test-sendmessage.png)
 
 The payload is cropped? It looks like there's a limit for the description, if we count the characters it'll be 30 character and the rest is removed and replaced by `...` <br>
 
@@ -191,11 +191,11 @@ We'll replace it and create `x` file with the `sendMessage` on our webserver <br
 Create new server ( We do not want to disturb the administrator due to alerts ) and send the link.
 Take the invite code and submit it to help page.
 
-![Admin Token](/media/admin-cookie.png)
+![Admin Token](/assets/img/dislaugh/admin-cookie.png)
 
 We now have the administrator token, let's try to replace our token with administrator token in localStorage ( CTRL + SHIFT + I ) and refresh the application ( CTRL + R ) <br>
 
-![Disappointment](/media/disappointment.png) We didn't found anything, We created this server to check if we in the right account.
+![Disappointment](/assets/img/dislaugh/disappointment.png) We didn't found anything, We created this server to check if we in the right account.
 
 Oh wait, do we remember `nodeIntegration` in app.js ?
 the value was `!0` that's means true, So if we have XSS we can get RCE <br>
@@ -208,7 +208,7 @@ We'll send the link again in the channel, then we have to listen for incoming co
 
 Now for the final step we have to invite the administrator again.
 
-![flag](/media/flag.png)
+![flag](/assets/img/dislaugh/flag.png)
 
 We finally got reverse shell and flag. <br>
 
