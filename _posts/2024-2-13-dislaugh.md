@@ -6,7 +6,7 @@ published: true
 ---
 # Introduction
 In this blog post, I'll share how I solved the DisLaugh Desktop Challenge from 0xL4ugh CTF 2024 in an unintended way, along with my team, [thehackerscrew](https://ctftime.org/team/85618/). <br>
-I 🩸 it and another three solves only so far.
+I 🩸 it and another three solves only so far. <br>
 ![Chall CTFd](/assets/img/dislaugh/challenge.png)
 <br>
 
